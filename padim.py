@@ -47,13 +47,16 @@ def embedding_net(net_type='res'):
         x = tf.keras.applications.efficientnet.preprocess_input(input_tensor)
         model = tf.keras.applications.EfficientNetB7(include_top=False, weights='imagenet', input_tensor=x,
                                                      pooling=None)
-        layer1 = model.get_layer(name='block5a_expand_activation').output
-        layer2 = model.get_layer(name='block6a_expand_activation').output
-        layer3 = model.get_layer(name='block7a_expand_activation').output
+
+        layer1 = model.get_layer(name='block5a_activation').output
+        layer2 = model.get_layer(name='block6a_activation').output
+        layer3 = model.get_layer(name='block7a_activation').output
 
     else:
         raise Exception("[NotAllowedNetType] network type is not allowed ")
 
+    model.trainable = False
+    # model.summary(line_length=100)
     shape = (layer1.shape[1], layer1.shape[2], layer1.shape[3] + layer2.shape[3] + layer3.shape[3])
 
     return tf.keras.Model(model.input, outputs=[layer1, layer2, layer3]), shape
