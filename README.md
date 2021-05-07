@@ -25,7 +25,7 @@ python main.py
     - PyTorch.: WideResNet50, Rd 550 
     (from [PyTorch version](https://github.com/xiahaifeng1995/PaDiM-Anomaly-Detection-Localization-master)) (WR50-Rd550)
     - Net 1: EfficientNetB7 \[layer a_expand_activation 5, 6, 7], Rd 1000 (ENB7-Rd1000)
-    - Net 2: EfficientNetB7 \[layer 4, 6, 7], Rd 1000 (ENB7-Rd1000)
+    - Net 2: EfficientNetB7 \[layer a_expand_activation 4, 6, 7], Rd 1000 (ENB7-Rd1000)
     - Net 3: EfficientNetB7 \[layer a_activation 5, 6, 7], Rd 1000 (ENB7-Rd1000)
 
 * I observed that intermediate layers selection has some effects on detection performance.
@@ -48,9 +48,9 @@ screw       	|0.844|	0.632|	0.767|	0.895|
 toothbrush  	|0.972|	0.767|	0.972|	0.811|
 transistor  	|0.978|	0.930|	0.949|	0.975|
 zipper      	|0.909|	0.980|	0.986|	0.990|
-Avg. (tex.) 	|0.9840|	0.9579|	0.9781|	0.9885|
-Avg. (obj.) 	|0.9410|	0.8881|	0.9323|	0.9455|
-Avg. (all)  	|0.9550|	0.9114|	0.9476|	0.9598|
+**Avg. (tex.)** 	|**0.9840**|	**0.9579**|	**0.9781**|	**0.9885**|
+**Avg. (obj.)** 	|**0.9410**|	**0.8881**|	**0.9323**|	**0.9455**|
+**Avg. (all)**  	|**0.9550**|	**0.9114**|	**0.9476**|	**0.9598**|
 
 MvTec       	|org. (Patch)  	 |Net 1 (Patch) 	 |Net 2 (Patch) 	|Net 3(Patch)
 -----       	|-----         	 |-----         	| -----         	 |-----         
@@ -69,9 +69,9 @@ screw       	|0.983	|0.986	|0.941	|0.893|
 toothbrush  	|0.983	|0.979	|0.937	|0.864|
 transistor  	|0.987	|0.977	|0.958	|0.958|
 zipper      	|0.975	|0.965	|0.840	|0.814|
-Avg. (tex.) 	|0.9650	|0.9536	|0.8131	|0.7979|
-Avg. (obj.) 	|0.9780	|0.9724	|0.8987	|0.8776|
-Avg. (all)  	|0.9730	|0.9961	|0.8702	|0.8510|
+**Avg. (tex.)** 	|**0.9650**	|**0.9536**	|**0.8131**	|**0.7979**|
+**Avg. (obj.)** 	|**0.9780**	|**0.9724**	|**0.8987**	|**0.8776**|
+**Avg. (all)**  	|**0.9730**	|**0.9961**	|**0.8702**	|**0.8510**|
 
 
 #### ROC Curve (Net 1) Bottle
